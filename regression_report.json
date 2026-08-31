@@ -1,0 +1,749 @@
+{
+  "total": 18,
+  "passed": 18,
+  "failed": 0,
+  "accuracy": 1.0,
+  "results": [
+    {
+      "case_id": "problematic_01",
+      "name": "Usman",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_02",
+      "name": "Kingshuk",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_03",
+      "name": "Suman",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": "2000-08-17",
+      "effective_schedule_expression": "कल",
+      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "events": [
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "16 August",
+          "date": "2000-08-16",
+          "event_type": "unknown_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "नमस्ते सुमन, मैं Anika हूँ Plixlife से। आपका order delivery के लिए था लेकिन हम उसे deliver नहीं कर पाए थे। मैं आपकी delivery फिर से schedule करने के लिए call कर रही हूँ। दरअसल, हम आपकी delivery 16 August को deliver नहीं कर पाए क्योंकि delivery partner ने बताया कि delivery receiver उपलब्ध नहीं था। क्या यह सही है?"
+        },
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "delivery 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "नमस्ते सुमन, मैं Anika हूँ Plixlife से। आपका order delivery के लिए था लेकिन हम उसे deliver नहीं कर पाए थे। मैं आपकी delivery फिर से schedule करने के लिए call कर रही हूँ। दरअसल, हम आपकी delivery 16 August को deliver नहीं कर पाए क्योंकि delivery partner ने बताया कि delivery receiver उपलब्ध नहीं था। क्या यह सही है?"
+        },
+        {
+          "turn_index": 4,
+          "speaker": "agent",
+          "expression": "16 August",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "सुमन जी, मैं कह रही हूँ कि आपकी delivery 16 August को deliver नहीं हो पाई क्योंकि delivery receiver उपलब्ध नहीं था। क्या यह वजह सही है या आपको लगता है कि कुछ और था? कृपया बताइए ताकि मैं आपकी मदद कर सकूं।"
+        },
+        {
+          "turn_index": 4,
+          "speaker": "agent",
+          "expression": "delivery 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "सुमन जी, मैं कह रही हूँ कि आपकी delivery 16 August को deliver नहीं हो पाई क्योंकि delivery receiver उपलब्ध नहीं था। क्या यह वजह सही है या आपको लगता है कि कुछ और था? कृपया बताइए ताकि मैं आपकी मदद कर सकूं।"
+        },
+        {
+          "turn_index": 6,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "agent_proposed_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "ओह समझ गई। तो delivery partner ने जो वजह बताई थी वह सही नहीं है। इसलिए मुझे खेद है। अब मैं आपकी delivery फिर से schedule करती हूँ। क्या हम आपकी delivery कल कर सकते हैं?"
+        },
+        {
+          "turn_index": 8,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "unknown_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "ठीक है सुमन जी, तो आप कल..."
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_04",
+      "name": "Amrit",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_05",
+      "name": "Joshi",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No new agent delivery scheduling/confirmation event was detected.",
+      "events": [
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "order 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "नमस्ते जोशी जी, मैं Wari से Anika बोल रही हूँ। सच बताऊँ तो हम आपका order 16 अगस्त को deliver करने की कोशिश की थी लेकिन delivery नहीं हो पाई। मैं आपकी delivery फिर से schedule करने के लिए call कर रही हूँ, तो क्या मैं आपको delivery का कारण बता सकती हूँ?"
+        },
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "16 अगस्त",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "नमस्ते जोशी जी, मैं Wari से Anika बोल रही हूँ। सच बताऊँ तो हम आपका order 16 अगस्त को deliver करने की कोशिश की थी लेकिन delivery नहीं हो पाई। मैं आपकी delivery फिर से schedule करने के लिए call कर रही हूँ, तो क्या मैं आपको delivery का कारण बता सकती हूँ?"
+        },
+        {
+          "turn_index": 3,
+          "speaker": "customer",
+          "expression": "आज",
+          "date": "2000-08-16",
+          "event_type": "customer_requested_date",
+          "confidence": "high",
+          "reason": "आज",
+          "text": "मैं तो घर पे ही हूँ। Delivery तो कब मेरे को चाहिए, आज भी आना था तो नहीं आया। कब दोगे आप? मेरे को क्या मालूम।"
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_06",
+      "name": "Deepanshu",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": "2000-08-17",
+      "effective_schedule_expression": "tomorrow",
+      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "events": [
+        {
+          "turn_index": 1,
+          "speaker": "agent",
+          "expression": "order 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "नमस्ते Deepanshu, मैं Anika हूँ Giva से। हम आपकी order की delivery के बारे में बात कर रहे हैं। असल में हम आपका order 16 अगस्त को deliver करने की कोशिश की थी, लेकिन delivery नहीं हो पाई। मैं आपकी delivery फिर से schedule करने में मदद कर सकती हूँ। क्या आप बता सकते हैं कि क्या मैं आपकी मदद कर सकती हूँ?"
+        },
+        {
+          "turn_index": 1,
+          "speaker": "agent",
+          "expression": "16 अगस्त",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "नमस्ते Deepanshu, मैं Anika हूँ Giva से। हम आपकी order की delivery के बारे में बात कर रहे हैं। असल में हम आपका order 16 अगस्त को deliver करने की कोशिश की थी, लेकिन delivery नहीं हो पाई। मैं आपकी delivery फिर से schedule करने में मदद कर सकती हूँ। क्या आप बता सकते हैं कि क्या मैं आपकी मदद कर सकती हूँ?"
+        },
+        {
+          "turn_index": 8,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "agent_proposed_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "ठीक है। आपकी सहूलियत के लिए हम फिर से delivery कल को schedule कर सकते हैं। क्या कल आपके लिए ठीक रहेगा?"
+        },
+        {
+          "turn_index": 8,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "unknown_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "ठीक है। आपकी सहूलियत के लिए हम फिर से delivery कल को schedule कर सकते हैं। क्या कल आपके लिए ठीक रहेगा?"
+        },
+        {
+          "turn_index": 9,
+          "speaker": "customer",
+          "expression": "5 o",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है after 5 o'clock."
+        },
+        {
+          "turn_index": 9,
+          "speaker": "customer",
+          "expression": "after 5",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है after 5 o'clock."
+        },
+        {
+          "turn_index": 10,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "agent_proposed_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "मैं आपकी preferred timing delivery team को बता दूँगी लेकिन exact time confirm नहीं कर सकती। तो कल की delivery schedule कर देती हूँ। क्या आप delivery के लिए कोई खास निर्देश देना चाहेंगे या पता या संपर्क विवरण में कोई बदलाव है?"
+        },
+        {
+          "turn_index": 12,
+          "speaker": "agent",
+          "expression": "tomorrow",
+          "date": "2000-08-17",
+          "event_type": "agent_confirmed_date",
+          "confidence": "high",
+          "reason": "tomorrow",
+          "text": "I understand you want to make an online payment. For now let's focus on rescheduling your delivery. Your delivery is scheduled for tomorrow. If you need assistance with payment please visit our website or app. Is there anything else you would like to update for the delivery?"
+        },
+        {
+          "turn_index": 14,
+          "speaker": "agent",
+          "expression": "tomorrow",
+          "date": "2000-08-17",
+          "event_type": "agent_confirmed_date",
+          "confidence": "high",
+          "reason": "tomorrow",
+          "text": "Alright, it's done. Your delivery is rescheduled for tomorrow. Have a good day."
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_07",
+      "name": "Nida",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": "2000-08-17",
+      "effective_schedule_expression": "कल",
+      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "events": [
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "16th August",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "जी Nida, मैं समझती हूँ कि बार-बार call आना परेशान कर सकता है। Actually हम आपकी order delivery के बारे में बात करने के लिए call कर रहे हैं। आपकी delivery attempt 16th August को हुई थी, लेकिन delivery partner ने बताया कि आप reachable नहीं थे। क्या यह सही है?"
+        },
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "attempt 16th",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "जी Nida, मैं समझती हूँ कि बार-बार call आना परेशान कर सकता है। Actually हम आपकी order delivery के बारे में बात करने के लिए call कर रहे हैं। आपकी delivery attempt 16th August को हुई थी, लेकिन delivery partner ने बताया कि आप reachable नहीं थे। क्या यह सही है?"
+        },
+        {
+          "turn_index": 4,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "agent_proposed_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "ठीक कहते हैं Nida. मुझे माफ कीजिए कि delivery partner ने गलत जानकारी दी। चलिए delivery फिर से schedule करते हैं। क्या हम कल delivery का प्रयास कर सकते हैं?"
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_08",
+      "name": "Abhishek",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_09",
+      "name": "आदर्श।",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_10",
+      "name": "सरोज",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": "2000-08-18",
+      "effective_schedule_expression": "18 अगस्त",
+      "reason": "Effective new schedule 2000-08-18 is after transcript_today 2000-08-16.",
+      "events": [
+        {
+          "turn_index": 4,
+          "speaker": "agent",
+          "expression": "16 अगस्त",
+          "date": "2000-08-16",
+          "event_type": "unknown_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "सरोज जी, मैं So True की अनिका हूँ और मैं आपकी delivery के बारे में मदद करने के लिए बात कर रही हूँ। Actually, हम आपकी delivery जो 16 अगस्त को थी, नहीं कर पाए थे। मैं आपकी delivery फिर से schedule करना चाहती हूँ। क्या आप हिंदी में बात करना continue करना चाहेंगे?"
+        },
+        {
+          "turn_index": 6,
+          "speaker": "agent",
+          "expression": "delivery 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है सरोज जी, मैं अब हिंदी में बात करती हूँ। आपकी delivery 16 अगस्त को इसलिए नहीं हो पाई क्योंकि delivery person ने बताया कि आप उपलब्ध नहीं थे। क्या यह बात सही है?"
+        },
+        {
+          "turn_index": 6,
+          "speaker": "agent",
+          "expression": "16 अगस्त",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "ठीक है सरोज जी, मैं अब हिंदी में बात करती हूँ। आपकी delivery 16 अगस्त को इसलिए नहीं हो पाई क्योंकि delivery person ने बताया कि आप उपलब्ध नहीं थे। क्या यह बात सही है?"
+        },
+        {
+          "turn_index": 10,
+          "speaker": "customer",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "customer_requested_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "कल कितने बजे तक"
+        },
+        {
+          "turn_index": 11,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "agent_proposed_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "मैं delivery team को आपकी preferred timing जरूर बताऊँगी, लेकिन exact time confirm नहीं कर सकती। कल की delivery schedule कर दूँ।"
+        },
+        {
+          "turn_index": 12,
+          "speaker": "customer",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "customer_requested_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "नहीं, नहीं, कल की कर"
+        },
+        {
+          "turn_index": 13,
+          "speaker": "agent",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "agent_proposed_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "ठीक है सरोज जी, कल आपकी delivery schedule कर दी गई है। क्या आप delivery person के लिए कोई विशेष निर्देश देना चाहते हैं या आपके पते या संपर्क number में कोई बदलाव है?"
+        },
+        {
+          "turn_index": 16,
+          "speaker": "customer",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "customer_requested_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "आने से पहले कल थोड़ा मेरा busy schedule है। अगर contact कर देंगे तो ज़्यादा अच्छा है। माने एक-"
+        },
+        {
+          "turn_index": 18,
+          "speaker": "agent",
+          "expression": "आज",
+          "date": "2000-08-16",
+          "event_type": "agent_proposed_date",
+          "confidence": "high",
+          "reason": "आज",
+          "text": "सरोज जी, आज 16 अगस्त है और हम केवल तीन दिन के अंदर delivery schedule कर सकते हैं। इसलिए हम 31 तारीख को delivery नहीं करवा सकते। क्या परसों की तारीख यानी 18 अगस्त-"
+        },
+        {
+          "turn_index": 18,
+          "speaker": "agent",
+          "expression": "16 अगस्त",
+          "date": "2000-08-16",
+          "event_type": "agent_proposed_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "सरोज जी, आज 16 अगस्त है और हम केवल तीन दिन के अंदर delivery schedule कर सकते हैं। इसलिए हम 31 तारीख को delivery नहीं करवा सकते। क्या परसों की तारीख यानी 18 अगस्त-"
+        },
+        {
+          "turn_index": 18,
+          "speaker": "agent",
+          "expression": "18 अगस्त",
+          "date": "2000-08-18",
+          "event_type": "unknown_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "सरोज जी, आज 16 अगस्त है और हम केवल तीन दिन के अंदर delivery schedule कर सकते हैं। इसलिए हम 31 तारीख को delivery नहीं करवा सकते। क्या परसों की तारीख यानी 18 अगस्त-"
+        },
+        {
+          "turn_index": 21,
+          "speaker": "agent",
+          "expression": "18 अगस्त",
+          "date": "2000-08-18",
+          "event_type": "unknown_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "सरोज जी, कृपया आप अपनी preferred delivery तारीख एक बार फिर से साफ-साफ बताएं ताकि मैं आपकी delivery सही से schedule कर सकूं। आप परसों यानी 18 अगस्त या कोई और दिन चाहते हैं?"
+        },
+        {
+          "turn_index": 22,
+          "speaker": "customer",
+          "expression": "18 अगस्त",
+          "date": "2000-08-18",
+          "event_type": "customer_requested_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "नहीं, नहीं, 18 अगस्त को करा दीजिए।"
+        },
+        {
+          "turn_index": 23,
+          "speaker": "agent",
+          "expression": "delivery 18",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है। सरोज जी, आपकी delivery 18 अगस्त के लिए schedule कर दी गई है। क्या delivery person के लिए कोई विशेष निर्देश देना चाहेंगे या आपके पते या संपर्क number में कोई, कोई बदलाव है?"
+        },
+        {
+          "turn_index": 23,
+          "speaker": "agent",
+          "expression": "18 अगस्त",
+          "date": "2000-08-18",
+          "event_type": "agent_confirmed_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "ठीक है। सरोज जी, आपकी delivery 18 अगस्त के लिए schedule कर दी गई है। क्या delivery person के लिए कोई विशेष निर्देश देना चाहेंगे या आपके पते या संपर्क number में कोई, कोई बदलाव है?"
+        },
+        {
+          "turn_index": 25,
+          "speaker": "customer",
+          "expression": "कल",
+          "date": "2000-08-17",
+          "event_type": "customer_requested_date",
+          "confidence": "medium",
+          "reason": "कल interpreted as tomorrow from scheduling context",
+          "text": "नहीं, नहीं, कोई नहीं। कल फिर आने से पहले अगर message हमको कर देंगे कि phone कर देंगे"
+        },
+        {
+          "turn_index": 27,
+          "speaker": "agent",
+          "expression": "delivery 18",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है सरोज जी, मैं delivery team को बता दूँगी कि वे delivery से पहले आपको call करें। आपकी delivery 18 अगस्त के लिए confirm कर दी गई है। धन्यवाद।"
+        },
+        {
+          "turn_index": 27,
+          "speaker": "agent",
+          "expression": "18 अगस्त",
+          "date": "2000-08-18",
+          "event_type": "agent_proposed_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "ठीक है सरोज जी, मैं delivery team को बता दूँगी कि वे delivery से पहले आपको call करें। आपकी delivery 18 अगस्त के लिए confirm कर दी गई है। धन्यवाद।"
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_11",
+      "name": "Dhotre",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": "2000-08-29",
+      "effective_schedule_expression": "29 अगस्त",
+      "reason": "Effective new schedule 2000-08-29 is after transcript_today 2000-08-16.",
+      "events": [
+        {
+          "turn_index": 5,
+          "speaker": "agent",
+          "expression": "16 August",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "हम आपकी order delivery 16 August को attempt की थी, लेकिन delivery पूरी नहीं हो पाई। मैं आपकी delivery फिर से schedule करने के लिए call कर रही हूँ। क्या मैं delivery failure का कारण आपको बता सकती हूँ?"
+        },
+        {
+          "turn_index": 5,
+          "speaker": "agent",
+          "expression": "delivery 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "हम आपकी order delivery 16 August को attempt की थी, लेकिन delivery पूरी नहीं हो पाई। मैं आपकी delivery फिर से schedule करने के लिए call कर रही हूँ। क्या मैं delivery failure का कारण आपको बता सकती हूँ?"
+        },
+        {
+          "turn_index": 11,
+          "speaker": "agent",
+          "expression": "delivery 18",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है धोत्रे जी, मैं समझती हूँ कि आप alternate phone number अभी नहीं दे पा रहे। आपके हिसाब से delivery 18 अगस्त को schedule कर दूं। क्या यह तारीख आपके लिए ठीक रहेगी?"
+        },
+        {
+          "turn_index": 11,
+          "speaker": "agent",
+          "expression": "18 अगस्त",
+          "date": "2000-08-18",
+          "event_type": "agent_proposed_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "ठीक है धोत्रे जी, मैं समझती हूँ कि आप alternate phone number अभी नहीं दे पा रहे। आपके हिसाब से delivery 18 अगस्त को schedule कर दूं। क्या यह तारीख आपके लिए ठीक रहेगी?"
+        },
+        {
+          "turn_index": 13,
+          "speaker": "agent",
+          "expression": "20 अगस्त",
+          "date": "2000-08-20",
+          "event_type": "unknown_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "ठीक है धोत्रे जी, तो आप-- धोत्रे जी 19 और 20 अगस्त दोनों तारीखें delivery के लिए available हैं। आप इनमें से कौन सी तारीख पसंद करेंगे?"
+        },
+        {
+          "turn_index": 15,
+          "speaker": "agent",
+          "expression": "delivery 29",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "ठीक है धोत्रे जी, आपकी delivery 29 अगस्त को reschedule कर दी गई है। आपका दिन शुभ रहे।"
+        },
+        {
+          "turn_index": 15,
+          "speaker": "agent",
+          "expression": "29 अगस्त",
+          "date": "2000-08-29",
+          "event_type": "agent_proposed_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "ठीक है धोत्रे जी, आपकी delivery 29 अगस्त को reschedule कर दी गई है। आपका दिन शुभ रहे।"
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_12",
+      "name": "Muzammil",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": "2000-08-16",
+      "historical_delivery_date": "2000-08-16",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No new agent delivery scheduling/confirmation event was detected.",
+      "events": [
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "16th August",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "Hello. Yes, this call is not being recorded. Actually, we were unable to deliver your order on 16th August. I'm just calling to reschedule your delivery. May I continue in English?"
+        },
+        {
+          "turn_index": 2,
+          "speaker": "agent",
+          "expression": "on 16th",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "Hello. Yes, this call is not being recorded. Actually, we were unable to deliver your order on 16th August. I'm just calling to reschedule your delivery. May I continue in English?"
+        },
+        {
+          "turn_index": 6,
+          "speaker": "agent",
+          "expression": "delivery 16",
+          "date": null,
+          "event_type": "unknown_date",
+          "confidence": "low",
+          "reason": "Date expression could not be resolved.",
+          "text": "आपकी delivery 16 अगस्त को सफल नहीं हो पाई थी, इसलिए मैं इसे फिर से schedule करने के लिए call कर रही हूँ। क्या मैं आपको delivery failure का कारण बता सकती हूँ?"
+        },
+        {
+          "turn_index": 6,
+          "speaker": "agent",
+          "expression": "16 अगस्त",
+          "date": "2000-08-16",
+          "event_type": "historical_delivery_date",
+          "confidence": "high",
+          "reason": "explicit_calendar_date",
+          "text": "आपकी delivery 16 अगस्त को सफल नहीं हो पाई थी, इसलिए मैं इसे फिर से schedule करने के लिए call कर रही हूँ। क्या मैं आपको delivery failure का कारण बता सकती हूँ?"
+        }
+      ]
+    },
+    {
+      "case_id": "problematic_13",
+      "name": "राणा",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_14",
+      "name": "this is Anika from PopClub",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_15",
+      "name": "अभिजीत",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_16",
+      "name": "Prasanjit",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_17",
+      "name": "Diana",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    },
+    {
+      "case_id": "problematic_18",
+      "name": "Bhavik",
+      "expected": "false",
+      "actual": "false",
+      "match": true,
+      "transcript_today": null,
+      "historical_delivery_date": null,
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No reliable explicit historical/original delivery date was found, so transcript_today could not be established.",
+      "events": []
+    }
+  ]
+}
