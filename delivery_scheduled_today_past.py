@@ -4,7 +4,7 @@ from __future__ import annotations
 import json
 import re
 from dataclasses import asdict, dataclass
-from datetime import date
+from datetime import date, datetime, timedelta
 from enum import Enum
 from typing import Any, Dict, List, Optional
 
@@ -20,6 +20,71 @@ class MetricValue(str, Enum):
     TRUE = "true"
     FALSE = "false"
 
+
+
+def _extract_log_current_date(logs: Any) -> Optional[date]:
+    """
+    Extract the call's current date from optional log JSON.
+
+    Primary field:
+        currentDate = "Tuesday, September 1, 2026"
+
+    Fallbacks are supported for the same field nested under context, and for
+    currentDateISO/currentDateISO under the same locations.
+    """
+    if logs is None:
+        return None
+
+    if isinstance(logs, str):
+        try:
+            logs = json.loads(logs)
+        except json.JSONDecodeError:
+            return None
+
+    if not isinstance(logs, dict):
+        return None
+
+    candidates = [
+        logs.get("currentDate"),
+        (
+            logs.get("context", {}).get("currentDate")
+            if isinstance(logs.get("context"), dict)
+            else None
+        ),
+        logs.get("currentDateISO"),
+        (
+            logs.get("context", {}).get("currentDateISO")
+            if isinstance(logs.get("context"), dict)
+            else None
+        ),
+    ]
+
+    for value in candidates:
+        if not value:
+            continue
+
+        value = str(value).strip()
+
+        for fmt in (
+            "%A, %B %d, %Y",
+            "%A, %B %d,%Y",
+            "%B %d, %Y",
+            "%d %B %Y",
+            "%Y-%m-%d",
+        ):
+            try:
+                return datetime.strptime(value, fmt).date()
+            except ValueError:
+                continue
+
+        try:
+            return datetime.fromisoformat(
+                value.replace("Z", "+00:00")
+            ).date()
+        except ValueError:
+            continue
+
+    return None
 
 @dataclass
 class EvaluationResult:
@@ -229,7 +294,7 @@ class DeliveryScheduledTodayPastMetric:
             EventType.CUSTOMER_ACCEPTED_DATE,
         }
 
-    def evaluate(self, transcript: Any) -> Dict[str, Any]:
+    def evaluate(self, transcript: Any, logs: Any = None) -> Dict[str, Any]:
         from transcript_parser import TranscriptParser
 
         turns = TranscriptParser.parse(transcript)
@@ -249,25 +314,32 @@ class DeliveryScheduledTodayPastMetric:
 
         historical_date, historical_expression, historical_turn = self._find_anchor(turns)
 
-        # Without the historical anchor we cannot safely compare dates.
-        # The metric remains binary: unresolved cases return false.
-        if historical_date is None:
+        # If log JSON is supplied, its currentDate is authoritative for
+        # transcript_today. Without logs, retain the existing transcript-derived
+        # date path.
+        log_current_date = _extract_log_current_date(logs)
+        transcript_today = log_current_date or historical_date
+
+        # We still keep historical_date separately for audit purposes.
+        if transcript_today is None:
             return EvaluationResult(
                 metric=self.METRIC_NAME,
                 value=MetricValue.FALSE.value,
                 transcript_today=None,
-                historical_delivery_date=None,
+                historical_delivery_date=(
+                    historical_date.isoformat() if historical_date else None
+                ),
                 effective_new_schedule_date=None,
                 effective_schedule_expression=None,
                 effective_schedule_event_type=None,
                 reason=(
-                    "No reliable explicit historical/original delivery date "
-                    "was found, so transcript_today could not be established."
+                    "No reliable current date was found in logs and no "
+                    "transcript-derived date could be established."
                 ),
                 events=[],
             ).to_dict()
 
-        extractor = DeliveryDateEventExtractor(historical_date)
+        extractor = DeliveryDateEventExtractor(transcript_today)
         events = extractor.extract_events(turns)
 
         # Remove the anchor historical date itself from the schedule candidates.
@@ -314,24 +386,26 @@ class DeliveryScheduledTodayPastMetric:
 
         scheduled_date = self._date_from_event(effective)
 
-        if scheduled_date <= historical_date:
+        if scheduled_date <= transcript_today:
             value = MetricValue.TRUE.value
             reason = (
                 f"Effective new schedule {scheduled_date.isoformat()} is "
-                f"on or before transcript_today {historical_date.isoformat()}."
+                f"on or before transcript_today {transcript_today.isoformat()}."
             )
         else:
             value = MetricValue.FALSE.value
             reason = (
                 f"Effective new schedule {scheduled_date.isoformat()} is "
-                f"after transcript_today {historical_date.isoformat()}."
+                f"after transcript_today {transcript_today.isoformat()}."
             )
 
         return EvaluationResult(
             metric=self.METRIC_NAME,
             value=value,
-            transcript_today=historical_date.isoformat(),
-            historical_delivery_date=historical_date.isoformat(),
+            transcript_today=transcript_today.isoformat(),
+            historical_delivery_date=(
+                historical_date.isoformat() if historical_date else None
+            ),
             effective_new_schedule_date=scheduled_date.isoformat(),
             effective_schedule_expression=effective.expression,
             effective_schedule_event_type=effective.event_type.value,
@@ -340,8 +414,11 @@ class DeliveryScheduledTodayPastMetric:
         ).to_dict()
 
 
-def evaluate_delivery_scheduled_today_past(transcript: Any) -> Dict[str, Any]:
-    return DeliveryScheduledTodayPastMetric().evaluate(transcript)
+def evaluate_delivery_scheduled_today_past(
+    transcript: Any,
+    logs: Any = None,
+) -> Dict[str, Any]:
+    return DeliveryScheduledTodayPastMetric().evaluate(transcript, logs)
 
 
 if __name__ == "__main__":
