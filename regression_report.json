@@ -12,9 +12,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "कल",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -96,9 +96,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "17 अगस्त",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -150,9 +150,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "कल",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -224,9 +224,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "tomorrow",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -330,7 +330,7 @@
       "historical_delivery_date": "2000-08-16",
       "effective_new_schedule_date": null,
       "effective_schedule_expression": null,
-      "reason": "No new agent delivery scheduling/confirmation event was detected.",
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -476,9 +476,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "कल",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -1092,9 +1092,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-29",
-      "effective_schedule_expression": "29 अगस्त",
-      "reason": "Effective new schedule 2000-08-29 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 5,
@@ -1178,7 +1178,7 @@
       "historical_delivery_date": "2000-08-16",
       "effective_new_schedule_date": null,
       "effective_schedule_expression": null,
-      "reason": "No new agent delivery scheduling/confirmation event was detected.",
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -1232,7 +1232,7 @@
       "historical_delivery_date": "2000-08-16",
       "effective_new_schedule_date": null,
       "effective_schedule_expression": null,
-      "reason": "No new agent delivery scheduling/confirmation event was detected.",
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 3,
@@ -1284,9 +1284,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "कल",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,
@@ -1358,9 +1358,9 @@
       "match": true,
       "transcript_today": "2000-08-16",
       "historical_delivery_date": "2000-08-16",
-      "effective_new_schedule_date": "2000-08-17",
-      "effective_schedule_expression": "tomorrow",
-      "reason": "Effective new schedule 2000-08-17 is after transcript_today 2000-08-16.",
+      "effective_new_schedule_date": null,
+      "effective_schedule_expression": null,
+      "reason": "No confirmed new delivery schedule was detected. Historical dates, customer requests, and agent proposals do not count as a new scheduled delivery; not_applicable maps to false.",
       "events": [
         {
           "turn_index": 2,

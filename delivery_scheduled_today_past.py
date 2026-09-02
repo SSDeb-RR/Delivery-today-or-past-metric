@@ -278,10 +278,9 @@ class DeliveryScheduledTodayPastMetric:
 
     @staticmethod
     def _is_schedule_event(event):
-        return event.event_type in {
-            EventType.AGENT_PROPOSED_DATE,
-            EventType.AGENT_CONFIRMED_DATE,
-        }
+        # A proposal is not a scheduled delivery. Only an explicit agent
+        # confirmation can be the effective new schedule for this metric.
+        return event.event_type == EventType.AGENT_CONFIRMED_DATE
 
     @staticmethod
     def _is_historical(event):
@@ -350,36 +349,32 @@ class DeliveryScheduledTodayPastMetric:
             and self._date_from_event(e) is not None
         ]
 
-        # Select the effective schedule:
-        #
-        # 1. Prefer explicit agent confirmations.
-        # 2. Otherwise use the latest clear agent proposal/commitment.
-        #
-        # This prevents a historical date from being mistaken for the target.
+        # ONLY an explicit agent confirmation counts as a new scheduled
+        # delivery. Agent proposals, availability statements, customer
+        # requests, and historical dates are not schedules.
         confirmations = [
             e for e in schedule_events
             if e.event_type == EventType.AGENT_CONFIRMED_DATE
         ]
 
-        if confirmations:
-            effective = confirmations[-1]
-        elif schedule_events:
-            effective = schedule_events[-1]
-        else:
-            effective = None
+        effective = confirmations[-1] if confirmations else None
 
         if effective is None:
             return EvaluationResult(
                 metric=self.METRIC_NAME,
                 value=MetricValue.FALSE.value,
-                transcript_today=historical_date.isoformat(),
-                historical_delivery_date=historical_date.isoformat(),
+                transcript_today=transcript_today.isoformat(),
+                historical_delivery_date=(
+                    historical_date.isoformat() if historical_date else None
+                ),
                 effective_new_schedule_date=None,
                 effective_schedule_expression=None,
                 effective_schedule_event_type=None,
                 reason=(
-                    "No new agent delivery scheduling/confirmation event "
-                    "was detected."
+                    "No confirmed new delivery schedule was detected. "
+                    "Historical dates, customer requests, and agent proposals "
+                    "do not count as a new scheduled delivery; "
+                    "not_applicable maps to false."
                 ),
                 events=[e.to_dict() for e in events],
             ).to_dict()
